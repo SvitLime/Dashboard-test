@@ -67,6 +67,9 @@ img{
     margin: 36px 28px 76px;
     position: relative;
     height: 100vh;
+    @media screen and (max-width: 768px) {
+        min-width: 220px;
+    }
 }
 
 .header-logo{
@@ -209,16 +212,30 @@ img{
     padding: 41px 95px 0;
     background-color: #FAFBFF;
     flex-grow: 1;
+    @media screen and (max-width: 768px) {
+        padding: 41px 20px 0;
+
+    }
+
+    &__table{
+        position: relative;
+    }
 
     &__info{
         background-color: white;
         padding: 30px 38px;
+        margin-bottom: 75px;
+        @media screen and (max-width: 768px) {
+            margin-bottom: 40px;
+        }
     }
 
     &__top{
         display: flex;
         align-items: center;
-        justify-content: space-between;
+        gap: 446px;
+        position: relative;
+        margin-bottom: 40px;
     }
     &__h2{
         font-weight: 600;
@@ -234,6 +251,7 @@ img{
 
     &__search{
         position: relative;
+        z-index: 4;
     }
 }
 
@@ -251,4 +269,151 @@ height: 32px;
     border: none;
     border-radius: 10px;
     padding-left: 40px;
+}
+
+.dt-length{
+    display: none;
+}
+label{
+    display: none;
+}
+
+.dt-input{
+    position: absolute;
+    min-width: 216px;
+    min-height: 38px;
+    background-color: #FAFBFF;
+    border: none;
+    border-radius: 10px;
+    padding-left: 40px;
+    right: 0;
+    top: -77px;
+    z-index: 3;
+}
+
+.column-name {
+    
+    display: flex;
+    gap: 50px;
+}
+
+.col{
+    font-size: 14px;
+    color: var(--color-light-gray);
+    text-align: left;
+    padding-bottom: 14px;
+}
+
+.table-item{
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.5em;
+    padding: 20px 0;
+    @media screen and (max-width: 768px) {
+        white-space: nowrap;       /* Забороняємо перенесення тексту на новий рядок */
+        overflow: hidden;          /* Ховаємо текст, що виходить за межі контейнера */
+        text-overflow: ellipsis;   /* Відображаємо трійку крапок для обрізаного тексту */
+        max-width: 100px;          /* Максимальна ширина контейнера, за якою буде обрізаний текст */
+        cursor: pointer; 
+    }
+}
+
+.display{
+    width: 100%;
+    position: relative;
+}
+
+td {
+    width: 10em;
+    // padding: 0.3em;
+    padding: 10px;
+}
+
+thead{
+    position: relative;
+}
+
+.trAfter::after{
+    content: '';
+    position: absolute;
+    background-color: var(--color-light-gray);
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+}
+
+tr {
+    position: relative; 
+}
+
+tr::after {
+    content: ''; 
+    position: absolute; 
+    left: 0; 
+    bottom: 0;
+    width: 100%; 
+    height: 1px; 
+    background-color: var(--color-light-gray); 
+}
+
+.dt-layout-row{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 32px;
+}
+
+.dt-info{
+    color: var(--color-light-gray);
+}
+.first{
+    display: none;
+};
+
+.last{
+    display: none;
+}
+
+.dt-paging {
+    display: flex;
+    gap: 12px;
+}
+
+.dt-paging-button{
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+    color: #404B52;
+    padding: 6px 9px;
+    min-height: 24px;
+    min-width: 26px;
+    background-color: #F5F5F5;
+    border: 1px solid var(--color-light-gray);
+    border-radius: 4px;
+} 
+
+.current{
+    background-color: var(--color-blue);
+    color: #F5F5F5;
+}
+
+.status-active{
+    background-color: rgba(22, 192, 152, 0.38);
+    color: var(--color-green-dark);
+    border: 1px solid var(--color-green-dark);
+    border-radius: 4px;
+    padding: 4px 0;
+    text-align: center;
+}
+.status-inactive{
+    background-color: rgba(255, 197, 197, 1);
+    color: var(--color-red);
+    border: 1px solid var(--color-red);
+    border-radius: 4px;
+    padding: 4px 0;
+    text-align: center;
+}
+
+tr td:first-child {
+    width: 170px; /* Наприклад, задайте бажану ширину */
 }

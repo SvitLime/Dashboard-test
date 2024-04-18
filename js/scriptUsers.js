@@ -1,4 +1,4 @@
-[
+const user = [
     {
       
       "id": 1,
@@ -81,8 +81,8 @@
     },
     {
       
-      "id": 1,
-      "name": "Jane Cooper",
+      "id": 9,
+      "name": "John Smith",
       "company": "Microsoft",
       "phone": "(225) 555-0118",
       "email": "john@gmail.com",
@@ -91,8 +91,8 @@
     },
     {
       
-      "id": 2,
-      "name": "Floyd Miles",
+      "id": 10,
+      "name": "Emma Johnson",
       "company": "Yahoo",
       "phone": "(205) 555-0100",
       "email": "floyd@yahoo.com",
@@ -101,8 +101,8 @@
     },
     {
       
-      "id": 3,
-      "name": "Ronald Richards",
+      "id": 11,
+      "name": "Michael Brown",
       "company": "Adobe",
       "phone": "(302) 555-0107",
       "email": "ronald@adobe.com",
@@ -111,8 +111,8 @@
     },
     {
       
-      "id": 4,
-      "name": "Marvin McKinney",
+      "id": 12,
+      "name": "Sarah Williams",
       "company": "Tesla",
       "phone": "(252) 555-0126",
       "email": "marvin@tesla.com",
@@ -121,8 +121,8 @@
     },
     {
       
-      "id": 5,
-      "name": "Jerome Bell",
+      "id": 13,
+      "name": "David Jones",
       "company": "Google",
       "phone": "(629) 555-0129",
       "email": "jerome@google.com",
@@ -131,8 +131,8 @@
     },
     {
       
-      "id": 6,
-      "name": "Kathryn Murphy",
+      "id": 14,
+      "name": "Emily Taylor",
       "company": "Microsoft",
       "phone": "(406) 555-0120",
       "email": "kathryn@microsoft.com",
@@ -141,8 +141,8 @@
     },
     {
       
-      "id": 7,
-      "name": "Jacob Jones",
+      "id": 15,
+      "name": "James Wilson",
       "company": "Yahoo",
       "phone": "(208) 555-0112",
       "email": "jacob@yahoo.com",
@@ -151,8 +151,8 @@
     },
     {
       
-      "id": 8,
-      "name": "Kristin Watson",
+      "id": 16,
+      "name": "Olivia Clark",
       "company": "Facebook",
       "phone": "(704) 555-0127",
       "email": "kristin@facebook.com",
@@ -161,8 +161,8 @@
     },
     {
       
-      "id": 1,
-      "name": "Jane Cooper",
+      "id": 17,
+      "name": "Matthew Anderson",
       "company": "Microsoft",
       "phone": "(225) 555-0118",
       "email": "john@gmail.com",
@@ -171,8 +171,8 @@
     },
     {
       
-      "id": 2,
-      "name": "Floyd Miles",
+      "id": 18,
+      "name": "Sophia Martinez",
       "company": "Yahoo",
       "phone": "(205) 555-0100",
       "email": "floyd@yahoo.com",
@@ -181,8 +181,8 @@
     },
     {
       
-      "id": 3,
-      "name": "Ronald Richards",
+      "id": 19,
+      "name": "William Thompson",
       "company": "Adobe",
       "phone": "(302) 555-0107",
       "email": "ronald@adobe.com",
@@ -191,8 +191,8 @@
     },
     {
       
-      "id": 4,
-      "name": "Marvin McKinney",
+      "id": 20,
+      "name": "Ava Rodriguez",
       "company": "Tesla",
       "phone": "(252) 555-0126",
       "email": "marvin@tesla.com",
@@ -201,8 +201,8 @@
     },
     {
       
-      "id": 5,
-      "name": "Jerome Bell",
+      "id": 21,
+      "name": "Benjamin Moore",
       "company": "Google",
       "phone": "(629) 555-0129",
       "email": "jerome@google.com",
@@ -211,8 +211,8 @@
     },
     {
       
-      "id": 6,
-      "name": "Kathryn Murphy",
+      "id": 22,
+      "name": "Isabella Scott",
       "company": "Microsoft",
       "phone": "(406) 555-0120",
       "email": "kathryn@microsoft.com",
@@ -221,8 +221,8 @@
     },
     {
       
-      "id": 7,
-      "name": "Jacob Jones",
+      "id": 23,
+      "name": "Christopher Lee",
       "company": "Yahoo",
       "phone": "(208) 555-0112",
       "email": "jacob@yahoo.com",
@@ -231,8 +231,8 @@
     },
     {
       
-      "id": 8,
-      "name": "Kristin Watson",
+      "id": 24,
+      "name": "Mia Harris",
       "company": "Facebook",
       "phone": "(704) 555-0127",
       "email": "kristin@facebook.com",
@@ -241,6 +241,62 @@
     }
     
 
-  ]
+];
 
-  
+const renderUsers = (users) => {
+    const table = document.querySelector('.table');
+    
+    for (let user of users) {
+        const trContainer = document.createElement('tr');
+        trContainer.classList.add('trContainer');
+
+        const tdName = document.createElement('td');
+        const tdCompany = document.createElement('td');
+        const tdNumber = document.createElement('td');
+        const tdEmail = document.createElement('td');
+        const tdCountry = document.createElement('td');
+        const tdStatus = document.createElement('td');
+
+        const aNumber = document.createElement('a');
+        const aEmail = document.createElement('a');
+
+        tdName.textContent = user.name;
+        tdName.classList.add('table-item');
+
+        tdCompany.textContent = user.company;
+        tdCompany.classList.add('table-item');
+
+        aNumber.textContent = user.phone;
+        aNumber.classList.add('table-item');
+        aNumber.href = 'tel:+' + user.phone; // Corrected 'tell' to 'tel' for telephone links
+        
+        aEmail.textContent = user.email;
+        aEmail.classList.add('table-item');
+        aEmail.href = 'mailto:' + user.email;
+
+        tdCountry.textContent = user.country;
+        tdCountry.classList.add('table-item');
+        const par = document.createElement('p');
+        if (user.Active) {
+            
+            par.textContent = 'Active';
+            par.classList.add('status-active');
+            par.classList.add('table-item');;
+        } else {
+            par.textContent = 'Inactive';
+            par.classList.add('status-inactive');
+            par.classList.add('table-item');
+        }
+
+        tdNumber.appendChild(aNumber);
+        tdEmail.appendChild(aEmail);
+
+        tdStatus.appendChild(par)
+
+        trContainer.append(tdName, tdCompany, tdNumber, tdEmail, tdCountry, tdStatus);
+        table.appendChild(trContainer);
+    }
+};
+
+renderUsers(user);
+
