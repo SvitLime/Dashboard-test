@@ -267,11 +267,13 @@ const renderUsers = (users) => {
         tdCompany.classList.add('table-item');
 
         aNumber.textContent = user.phone;
-        aNumber.classList.add('table-item');
-        aNumber.href = 'tel:+' + user.phone; // Corrected 'tell' to 'tel' for telephone links
-        
         aEmail.textContent = user.email;
+        aNumber.classList.add('table-item');
+        aNumber.classList.add('table-item-tel');
+        aNumber.href = 'tel:+' + user.phone;
+        
         aEmail.classList.add('table-item');
+        aEmail.classList.add('table-item-mail');
         aEmail.href = 'mailto:' + user.email;
 
         tdCountry.textContent = user.country;

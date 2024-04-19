@@ -10,6 +10,16 @@ $(document).ready(function() {
     $('#myTable').DataTable({
         "paging": true,           // Увімкнути пагінацію
         "pageLength": 8, // Показувати по 10 рядків на сторінці
+        "columnDefs": [
+          { "targets": 0, "className": "custom-class-1" },  
+          { "targets": 1, "className": "custom-class-2" },  
+          { "targets": 2, "className": "custom-class-3" },  
+          { "targets": 2, "className": "custom-class-4" },  
+          { "targets": 2, "className": "custom-class-5" },  
+          { "targets": 2, "className": "custom-class-6" },  
+          
+      ],
+      "responsive": true
     });
 });
   

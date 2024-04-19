@@ -59,6 +59,9 @@ img{
 
 .body-container{
     display: flex;
+    @media screen and (max-width: 768px) {
+        flex-direction: column;
+    }
 }
 
 //Left side menu styles
@@ -67,14 +70,24 @@ img{
     margin: 36px 28px 76px;
     position: relative;
     height: 100vh;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         min-width: 220px;
+    }
+    @media screen and (max-width: 768px) {
+        height: fit-content;
+    }
+    @media screen and (max-width: 426px) {
+        margin: 24px 15px 24px;
     }
 }
 
 .header-logo{
     display: flex;
     margin-bottom: 64px;
+    @media screen and (max-width: 768px) {
+        margin-bottom: 12px;
+
+    }
     &__text{
         font-weight: 600;
         font-size: 26px;
@@ -95,12 +108,22 @@ img{
         display: flex;
         flex-direction: column;
         gap: 18px;
+        @media screen and (max-width: 768px) {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
     }
     &__list__item{
         min-height: 46px;
         display: flex;
         align-items: center;
         width: 100%;
+        @media screen and (max-width: 768px) {
+            width: fit-content;
+        }
+
     }
     &__div{
         display: flex;
@@ -121,6 +144,13 @@ img{
         width: 100%;
         min-height: inherit;
         padding: 11px;
+        @media screen and (max-width: 768px) {
+            gap: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+        }
+
         &:hover{
             background-color: var(--color-blue);
             border-radius: 8px;
@@ -191,6 +221,11 @@ img{
 .footer{
     bottom: 0;
     position: absolute;
+    @media screen and (max-width: 768px) {
+        top: 0;
+        right: 0;
+
+    }
     &__div{
         display: flex;
         gap: 12px;
@@ -207,15 +242,23 @@ img{
         color: var(--color-gray-second);
     }
 }
+h1{
+    @media screen and (max-width: 426px) {
+        padding-left: 20px;
+    }
+}
 
 .main{
     padding: 41px 95px 0;
     background-color: #FAFBFF;
     flex-grow: 1;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 1024px) {
         padding: 41px 20px 0;
-
     }
+    @media screen and (max-width:426px) {
+        padding: 41px 0px 0;
+    }
+
 
     &__table{
         position: relative;
@@ -228,14 +271,30 @@ img{
         @media screen and (max-width: 768px) {
             margin-bottom: 40px;
         }
+        @media screen and (max-width:426px) {
+            padding: 30px 15px;
+        }
+
     }
 
     &__top{
         display: flex;
         align-items: center;
-        gap: 446px;
+        gap: 447px;
         position: relative;
         margin-bottom: 40px;
+        @media screen and (max-width: 1024px) {
+            gap: 264px;
+        }
+        @media screen and (max-width: 768px) {
+            gap: 280px;
+        }
+        @media screen and (max-width:426px) {
+            gap: 24px;
+            margin-bottom: 0px;
+
+        }
+
     }
     &__h2{
         font-weight: 600;
@@ -313,24 +372,40 @@ label{
         white-space: nowrap;       /* Забороняємо перенесення тексту на новий рядок */
         overflow: hidden;          /* Ховаємо текст, що виходить за межі контейнера */
         text-overflow: ellipsis;   /* Відображаємо трійку крапок для обрізаного тексту */
-        max-width: 100px;          /* Максимальна ширина контейнера, за якою буде обрізаний текст */
+        max-width: 60px;          /* Максимальна ширина контейнера, за якою буде обрізаний текст */
         cursor: pointer; 
     }
+    @media screen and (max-width: 426px) {
+        font-size: 12px;
+        font-weight: 400;
+        line-height: 1em;
+        padding: 10px 0;
+    }
+
 }
 
 .display{
     width: 100%;
     position: relative;
 }
+.dataTable{
+    width: 100%;
+    position: relative;
+}
+table{
+    width: 100%;
+}
 
 td {
-    width: 10em;
-    // padding: 0.3em;
+    width: fit-content;
     padding: 10px;
 }
 
 thead{
     position: relative;
+    @media screen and (max-width:426px) {
+        display: none;
+    }
 }
 
 .trAfter::after{
@@ -361,10 +436,15 @@ tr::after {
     display: flex;
     justify-content: space-between;
     margin-top: 32px;
+    width: 100%;
 }
 
 .dt-info{
     color: var(--color-light-gray);
+    @media screen and (max-width:426px) {
+        font-size: 12px;
+    }
+
 }
 .first{
     display: none;
@@ -404,16 +484,96 @@ tr::after {
     border-radius: 4px;
     padding: 4px 0;
     text-align: center;
+    @media screen and (max-width:426px) {
+        font-size: 1px;
+        color: transparent;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+
+    }
+
 }
 .status-inactive{
     background-color: rgba(255, 197, 197, 1);
     color: var(--color-red);
     border: 1px solid var(--color-red);
     border-radius: 4px;
-    padding: 4px 0;
+    padding: 4px 8px;
     text-align: center;
+    @media screen and (max-width:426px) {
+        font-size: 1px;
+        color: transparent;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+    }
 }
 
-tr td:first-child {
-    width: 170px; /* Наприклад, задайте бажану ширину */
+colgroup{
+    width: 100%;
+}
+
+.myTable  {
+    width: 100%;
+}
+.custom-class-1 {
+    width: 140px; 
+}
+.custom-class-2 {
+    width: 95px; 
+    @media screen and (max-width:426px) {
+        width: 4px; 
+
+    }
+}
+.custom-class-3 {
+    width: 140px; 
+    @media screen and (max-width:426px) {
+        width: 100px; 
+
+    }
+}
+.custom-class-4 {
+    width: 190px; 
+    @media screen and (max-width:426px) {
+        width: 4px; 
+
+    }
+}
+.custom-class-5 {
+    width: 125px; 
+    @media screen and (max-width:426px) {
+        max-width: 40px; 
+    }
+}
+.custom-class-6 {
+    width: 100px; 
+    @media screen and (max-width:426px) {
+        max-width: 40px; 
+
+    }
+}
+
+.table-item-tel{
+    @media screen and (max-width:426px) {
+        background-image: url(../assets/call.png);
+        background-repeat: no-repeat;
+        color: transparent;
+        font-size: 1px;
+        width: 22px;
+        height: 20px;
+        display: block;
+    }
+}
+.table-item-mail{
+    @media screen and (max-width:426px) {
+        background-image: url(../assets/mail.png);
+        background-repeat: no-repeat;
+        color: transparent;
+        font-size: 1px;
+        width: 22px;
+        height: 20px;
+        display: block;
+    }
 }

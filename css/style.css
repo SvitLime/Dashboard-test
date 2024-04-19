@@ -62,6 +62,11 @@ img {
 .body-container {
   display: flex;
 }
+@media screen and (max-width: 768px) {
+  .body-container {
+    flex-direction: column;
+  }
+}
 
 .menu {
   min-width: 300px;
@@ -69,15 +74,31 @@ img {
   position: relative;
   height: 100vh;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .menu {
     min-width: 220px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .menu {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+}
+@media screen and (max-width: 426px) {
+  .menu {
+    margin: 24px 15px 24px;
   }
 }
 
 .header-logo {
   display: flex;
   margin-bottom: 64px;
+}
+@media screen and (max-width: 768px) {
+  .header-logo {
+    margin-bottom: 12px;
+  }
 }
 .header-logo__text {
   font-weight: 600;
@@ -98,11 +119,25 @@ img {
   flex-direction: column;
   gap: 18px;
 }
+@media screen and (max-width: 768px) {
+  .menu-nav__list {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .menu-nav__list__item {
   min-height: 46px;
   display: flex;
   align-items: center;
   width: 100%;
+}
+@media screen and (max-width: 768px) {
+  .menu-nav__list__item {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
 }
 .menu-nav__div {
   display: flex;
@@ -122,6 +157,14 @@ img {
   width: 100%;
   min-height: inherit;
   padding: 11px;
+}
+@media screen and (max-width: 768px) {
+  .menu-nav__link {
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+  }
 }
 .menu-nav__link:hover {
   background-color: var(--color-blue);
@@ -192,6 +235,12 @@ img {
   bottom: 0;
   position: absolute;
 }
+@media screen and (max-width: 768px) {
+  .footer {
+    top: 0;
+    right: 0;
+  }
+}
 .footer__div {
   display: flex;
   gap: 12px;
@@ -208,14 +257,25 @@ img {
   color: var(--color-gray-second);
 }
 
+@media screen and (max-width: 426px) {
+  h1 {
+    padding-left: 20px;
+  }
+}
+
 .main {
   padding: 41px 95px 0;
   background-color: #FAFBFF;
   flex-grow: 1;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
   .main {
     padding: 41px 20px 0;
+  }
+}
+@media screen and (max-width: 426px) {
+  .main {
+    padding: 41px 0px 0;
   }
 }
 .main__table {
@@ -231,12 +291,33 @@ img {
     margin-bottom: 40px;
   }
 }
+@media screen and (max-width: 426px) {
+  .main__info {
+    padding: 30px 15px;
+  }
+}
 .main__top {
   display: flex;
   align-items: center;
-  gap: 446px;
+  gap: 447px;
   position: relative;
   margin-bottom: 40px;
+}
+@media screen and (max-width: 1024px) {
+  .main__top {
+    gap: 264px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .main__top {
+    gap: 280px;
+  }
+}
+@media screen and (max-width: 426px) {
+  .main__top {
+    gap: 24px;
+    margin-bottom: 0px;
+  }
 }
 .main__h2 {
   font-weight: 600;
@@ -313,8 +394,16 @@ label {
     white-space: nowrap; /* Забороняємо перенесення тексту на новий рядок */
     overflow: hidden; /* Ховаємо текст, що виходить за межі контейнера */
     text-overflow: ellipsis; /* Відображаємо трійку крапок для обрізаного тексту */
-    max-width: 100px; /* Максимальна ширина контейнера, за якою буде обрізаний текст */
+    max-width: 60px; /* Максимальна ширина контейнера, за якою буде обрізаний текст */
     cursor: pointer;
+  }
+}
+@media screen and (max-width: 426px) {
+  .table-item {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 1em;
+    padding: 10px 0;
   }
 }
 
@@ -323,13 +412,28 @@ label {
   position: relative;
 }
 
+.dataTable {
+  width: 100%;
+  position: relative;
+}
+
+table {
+  width: 100%;
+}
+
 td {
-  width: 10em;
+  width: -moz-fit-content;
+  width: fit-content;
   padding: 10px;
 }
 
 thead {
   position: relative;
+}
+@media screen and (max-width: 426px) {
+  thead {
+    display: none;
+  }
 }
 
 .trAfter::after {
@@ -360,10 +464,16 @@ tr::after {
   display: flex;
   justify-content: space-between;
   margin-top: 32px;
+  width: 100%;
 }
 
 .dt-info {
   color: var(--color-light-gray);
+}
+@media screen and (max-width: 426px) {
+  .dt-info {
+    font-size: 12px;
+  }
 }
 
 .first {
@@ -405,16 +515,111 @@ tr::after {
   padding: 4px 0;
   text-align: center;
 }
+@media screen and (max-width: 426px) {
+  .status-active {
+    font-size: 1px;
+    color: transparent;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+}
 
 .status-inactive {
   background-color: rgb(255, 197, 197);
   color: var(--color-red);
   border: 1px solid var(--color-red);
   border-radius: 4px;
-  padding: 4px 0;
+  padding: 4px 8px;
   text-align: center;
 }
+@media screen and (max-width: 426px) {
+  .status-inactive {
+    font-size: 1px;
+    color: transparent;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+}
 
-tr td:first-child {
-  width: 170px; /* Наприклад, задайте бажану ширину */
+colgroup {
+  width: 100%;
+}
+
+.myTable {
+  width: 100%;
+}
+
+.custom-class-1 {
+  width: 140px;
+}
+
+.custom-class-2 {
+  width: 95px;
+}
+@media screen and (max-width: 426px) {
+  .custom-class-2 {
+    width: 4px;
+  }
+}
+
+.custom-class-3 {
+  width: 140px;
+}
+@media screen and (max-width: 426px) {
+  .custom-class-3 {
+    width: 100px;
+  }
+}
+
+.custom-class-4 {
+  width: 190px;
+}
+@media screen and (max-width: 426px) {
+  .custom-class-4 {
+    width: 4px;
+  }
+}
+
+.custom-class-5 {
+  width: 125px;
+}
+@media screen and (max-width: 426px) {
+  .custom-class-5 {
+    max-width: 40px;
+  }
+}
+
+.custom-class-6 {
+  width: 100px;
+}
+@media screen and (max-width: 426px) {
+  .custom-class-6 {
+    max-width: 40px;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .table-item-tel {
+    background-image: url(../assets/call.png);
+    background-repeat: no-repeat;
+    color: transparent;
+    font-size: 1px;
+    width: 22px;
+    height: 20px;
+    display: block;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  .table-item-mail {
+    background-image: url(../assets/mail.png);
+    background-repeat: no-repeat;
+    color: transparent;
+    font-size: 1px;
+    width: 22px;
+    height: 20px;
+    display: block;
+  }
 }/*# sourceMappingURL=style.css.map */
