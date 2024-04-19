@@ -305,7 +305,7 @@ img {
 }
 @media screen and (max-width: 1024px) {
   .main__top {
-    gap: 264px;
+    gap: 384px;
   }
 }
 @media screen and (max-width: 768px) {
